@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.0)
 
-set(NAME tests)
+set(NAME c_matrix_tests)
 
 add_executable(${NAME} main.c c_matrix/c_matrix_test.h)
 
