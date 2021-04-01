@@ -3,9 +3,13 @@
 
 #include <stdlib.h>
 
-typedef struct Matrix Matrix;
+typedef struct Matrix {
+    size_t r, c;
+    float *d;
+} Matrix;
 
 Matrix *matrix_create(size_t r, size_t c);
+Matrix matrix_create_static(float *d, size_t r, size_t c);
 void matrix_destroy(Matrix *m);
 
 Matrix *matrix_from_array(const float *arr, size_t r, size_t c);

@@ -4,11 +4,6 @@
 #include <stdio.h>
 #include <math.h>
 
-typedef struct Matrix {
-    size_t r, c;
-    float *d;
-} Matrix;
-
 void *matrix_multiplication_worker(void *data);
 
 Matrix *matrix_create(size_t r, size_t c) {
@@ -25,6 +20,17 @@ Matrix *matrix_create(size_t r, size_t c) {
     m->c = c;
     m->r = r;
     m->d = d;
+
+    return m;
+}
+
+Matrix matrix_create_static(float *d, size_t r, size_t c) {
+
+    Matrix m;
+
+    m.c = c;
+    m.r = r;
+    m.d = d;
 
     return m;
 }
